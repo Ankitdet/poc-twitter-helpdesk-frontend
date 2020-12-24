@@ -69,8 +69,8 @@ export default {
 
     const ORIGIN = window.location.origin;
     const HOST = ORIGIN?.includes("https")
-      ? "ws://ankit-server-socket.herokuapp.com/"
-      : "ws://localhost:8000/";
+      ? "ws://ankit-server-socket.herokuapp.com"
+      : "ws://localhost:8000";
     this.client = new w3cwebsocket(
       `${HOST}?oauth_token=${userData?.oauth_token}&oauth_token_secret=${userData?.oauth_token_secret}&screen_name=${userData?.screen_name}`
     );
@@ -143,7 +143,7 @@ export default {
       return this.mentions.filter(
         (item) =>
           new Date(item.created_at) <=
-          new Date(new Date().getTime() - 48 * 60 * 60000)
+          new Date(new Date().getTime() - 24 * 60 * 60000)
       );
     },
   },

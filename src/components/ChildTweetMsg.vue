@@ -12,7 +12,7 @@
     <div class="childtweetmsg--right">
       <div class="childtweetmsg-header">
         <div class="childtweetmsg-greet">
-          {{ text }}
+          {{ text?.slice(0,-1) }}
         </div>
         <div class="childtweetmsg-time">
           {{ time }}

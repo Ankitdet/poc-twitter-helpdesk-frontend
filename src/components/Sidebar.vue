@@ -126,7 +126,7 @@ export default {
 .sidebar-bottom {
   @include flex-col-h-cen;
   position: absolute;
-  bottom: 0;
+  bottom: -20px;
 }
 .sidebar-bottom-icon {
   padding: 15px 0;
