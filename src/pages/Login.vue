@@ -1,11 +1,10 @@
 <template>
   <main class="login">
-    <header class="login-header">Twitter Helpdesk</header>
-
+    <header class="login-header">Richpanel Twitter Helpdesk POC</header>
     <section class="login-content">
       <section class="login-content-box">
         <div class="login-content-box-header">
-          Already have a Twitter Account?
+          Already Twitter Account?
         </div>
         <button @click="requestTwitterToken" class="twitter-btn">
           <img
@@ -56,11 +55,6 @@ export default {
       };
       return axios(config)
         .then((response) => {
-          // console.log(
-          //   "response",
-          //   response && response.data && response.data.data
-          // );
-
           if (response && response.data && response.data.data) {
             const oauthToken = response.data.data.split("&")[0].split("=")[1];
             window.open(
@@ -70,7 +64,6 @@ export default {
           }
         })
         .catch((error) => {
-          // console.log("Error: ", error);
           return error;
         });
     },
@@ -97,15 +90,10 @@ export default {
         },
       })
         .then((response) => {
-          // console.log(
-          //   "response",
-          //   response && response.data && response.data.data
-          // );
           setCookie("userData", JSON.stringify(response?.data?.data));
           router.push({ name: "Conversations" });
         })
         .catch((error) => {
-          // console.log("Error: ", error);
           window.location.replace("/");
           return error;
         });

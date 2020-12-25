@@ -18,9 +18,7 @@
       <div class="childtweets-body-header">{{ getDay() }}</div>
       <ChildTweetMsg
         :currentTweet="currentTweet"
-        :text="
-          currentTweet?.text?.replace('@' + currUser?.username, '')?.trim()
-        "
+        :text="currentTweet?.text?.replace('@' + currUser?.username, '')?.trim()"
         :time="moment(currentTweet?.created_at).format('h:mm')"
         :profile="currentTweet?.user?.profile_image_url"
       />
@@ -45,7 +43,7 @@
                 ?.trim()
             : item?.text?.replace(`@${currUser?.username}`, '')?.trim()
         "
-        :time="moment(currentTweet?.created_at).format('h:mm')"
+        :time="moment(currentTweet?.created_at).format('hh:mm')"
         :profile="
           item?.text?.includes(currentTweet?.user?.screen_name)
             ? currUser?.profile_image_url
@@ -173,7 +171,6 @@ export default {
             vm.message = "";
             return;
           }
-          // eslint-disable-next-line vue/no-mutating-props
           vm.currentTweet.replies = [
             ...vm.currentTweet?.replies,
             {
@@ -189,7 +186,6 @@ export default {
           vm.message = "";
         })
         .catch((error) => {
-          // console.log("Error: ", error);
           this.message = "";
           return error;
         });

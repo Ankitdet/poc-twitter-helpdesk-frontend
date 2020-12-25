@@ -187,18 +187,15 @@ export default {
       return axios(config)
         .then((response) => {
           const { data } = response && response.data;
-          // console.log("data", data);
           const updatedData = data?.map((item) => {
             const updatedReplies = this.flatten(item?.replies);
             item.replies = updatedReplies;
             return item;
           });
-          // console.log("updatedData", updatedData);
           this.mentions = updatedData;
           this.currentTweet = updatedData[0];
         })
         .catch((error) => {
-          // console.log("Error: ", error);
           return error;
         });
     },

@@ -38,8 +38,6 @@ export default {
   color: #878787;
   @include flex-row-v-cen;
 }
-.header-session {
-}
 .header-user {
   padding-left: 50px;
 }

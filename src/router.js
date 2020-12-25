@@ -1,7 +1,5 @@
 import { createWebHistory, createRouter } from "vue-router";
 import { readCookie } from "./utils/cookie";
-
-// IMPORT ALL COMPONENTS HERE
 import Conversations from "./pages/Conversations.vue";
 import Login from "./pages/Login.vue";
 

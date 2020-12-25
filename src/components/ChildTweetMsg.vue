@@ -46,8 +46,6 @@ export default {
   padding: 5px 10px;
   margin: 20px 0;
 }
-.childtweetmsg--left {
-}
 .profile-pic {
   max-width: 20px;
   height: auto;

@@ -43,13 +43,9 @@ export default {
   color: grey;
   font-size: 14px;
 }
-.tasks-header-title {
-}
 .dropdown-icon{
   width: 12px;
   height: 10px;
-}
-.tasks-list {
 }
 .tasks-list-item {
   @include flex-row-v-start;
