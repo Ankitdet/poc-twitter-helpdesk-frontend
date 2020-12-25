@@ -43,7 +43,7 @@
                 ?.trim()
             : item?.text?.replace(`@${currUser?.username}`, '')?.trim()
         "
-        :time="moment(currentTweet?.created_at).format('hh:mm')"
+        :time="moment(currentTweet?.created_at).format('h:mm')"
         :profile="
           item?.text?.includes(currentTweet?.user?.screen_name)
             ? currUser?.profile_image_url
@@ -171,6 +171,7 @@ export default {
             vm.message = "";
             return;
           }
+           // eslint-disable-next-line vue/no-mutating-props
           vm.currentTweet.replies = [
             ...vm.currentTweet?.replies,
             {
