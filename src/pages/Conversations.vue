@@ -69,8 +69,8 @@ export default {
 
     const ORIGIN = window.location.origin;
     const HOST = ORIGIN?.includes("https")
-      ? "ws://twitter-socket-server.herokuapp.com/"
-      : "ws://localhost:8000/";
+      ? "ws://ankit-server-socket.herokuapp.com"
+      : "ws://localhost:8000";
     this.client = new w3cwebsocket(
       `${HOST}?oauth_token=${userData?.oauth_token}&oauth_token_secret=${userData?.oauth_token_secret}&screen_name=${userData?.screen_name}`
     );
