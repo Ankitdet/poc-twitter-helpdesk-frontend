@@ -143,7 +143,7 @@ export default {
       return this.mentions.filter(
         (item) =>
           new Date(item.created_at) <=
-          new Date(new Date().getTime() - 24 * 60 * 60000)
+          new Date(new Date().getTime() - 48 * 60 * 60000)
       );
     },
   },
