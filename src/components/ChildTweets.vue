@@ -144,13 +144,15 @@ export default {
           tokenSecret: userData?.oauth_token_secret,
         },
         data: {
-          status: `@${this.currentTweet?.user?.screen_name} ${tweetMsg.replace(
+          /* status: `@${this.currentTweet?.user?.screen_name} ${tweetMsg.replace(
             /[^a-zA-Z ]/g,
             ""
-          )}`,
+          )}`, */
+           status: `@${this.currentTweet?.user?.screen_name} ${tweetMsg}`,
           // username: "@" + this.currentTweet?.user?.screen_name,
         },
       };
+      console.log(vm.message);
       return axios(config)
         .then((response) => {
           const { data } = response && response.data;
@@ -159,7 +161,7 @@ export default {
             // eslint-disable-next-line vue/no-mutating-props
             vm.currentTweet.replies = [
               {
-                text: `${data?.text}`,
+                text: `${data.text}`,
                 referenced_tweets: [
                   {
                     type: "replied_to",
@@ -175,7 +177,7 @@ export default {
           vm.currentTweet.replies = [
             ...vm.currentTweet?.replies,
             {
-              text: `${data?.text}}`,
+              text: `${data.text}`,
               referenced_tweets: [
                 {
                   type: "replied_to",
