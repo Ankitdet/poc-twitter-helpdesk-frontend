@@ -92,7 +92,7 @@ export default {
 }
 
 .profile-details-name {
-  padding-top: 10px;
+  padding-top: 5px;
   font-size: 14px;
   color: black;
 }
@@ -136,7 +136,7 @@ export default {
   margin-right: 5px;
 }
 .profile-details-table {
-  padding-top: 3px;
+  padding-top: 0;
   min-width: 240px;
 }
 
